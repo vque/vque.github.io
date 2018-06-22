@@ -5,14 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>vque</title>
     <link href="style/bootstrap.min.css" rel="stylesheet">
+    <link href="style/devices.min.css" rel="stylesheet">
     <link href="style/style.css" rel="stylesheet">
   </head>
 
   <body>
     <div class="container-fluid">
       <div class="row flex-wrap-reverse py-3 px-sm-5 my-sm-5 align-items-center">
-        <div class="col-12 col-sm-auto phone-screenshot shadow">
-          <img src="image/student.svg" />
+        <div class="col-auto">
+          <div class="device-container">
+            <div class="device device-iphone-8 d-inline-block">
+              <div class="device-frame">
+                <img class="device-content" src="image/student.svg">
+              </div>
+              <div class="device-stripe"></div>
+              <div class="device-header"></div>
+              <div class="device-sensors"></div>
+              <div class="device-btns"></div>
+              <div class="device-power"></div>
+            </div>
+          </div>
         </div>
         <div class="col" style="margin-bottom: 60px;">
           <h1 class="display-4 font-weight-normal text-muted"><span class="text-dark">v</span>irtual <span class="text-dark">que</span>uing system</h1>

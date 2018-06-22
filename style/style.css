@@ -2,64 +2,41 @@ img {
   width: 100%;
 }
 
-.phone-screenshot > img {
-  box-shadow: 0px 0px 10px -2px;
-  background: #fff;
+.device {
+  transform-origin: 0 0;
+  transform: scale(0.3);
+}
+.device-container {
+  width: 130px;
+  height: 265px;
 }
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-  .phone-screenshot {
-    box-sizing: content-box;
-    position: relative;
-    width: 320px;
-    height: 568px;
-    border: 20px solid black;
-    border-radius: 45px;
-    padding: 80px 0px;
-    background: #000;
-    margin-left: 15px;
-
-    transform: scale(0.7);
-    transform-origin: 0 0;
-    margin-right: -96px;
-    margin-bottom: -124px; /* -144 + 40 */
-  }
-  .phone-screenshot::before {
-    content: "";
-    background: #333;
-    border: 0px;
-    width: 50px;
-    height: 10px;
-    position: absolute;
-    top: 25px;
-    border-radius: 5px;
-    left: calc(50% - 25px);
-  }
-
-  .phone-screenshot::after {
-    content: "";
-    background: #111;
-    border: 2px solid #333;
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    bottom: 5px;
-    border-radius: 50%;
-    left: calc(50% - 25px);
+  .device { transform: scale(0.54) }
+  .device-container {
+    width: 225px;
+    height: 470px;
   }
 }
 
 /*  Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) { }
+@media (min-width: 768px) {
+  .device { transform: scale(0.7) }
+  .device-container {
+    width: 300px;
+    height: 610px;
+  }
+}
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  .phone-screenshot {
+  .device {
     transform: scale(1);
-    transform-origin: 0 0;
-    margin-right: 20px;
-    margin-bottom: 20px;
+  }
+  .device-container {
+    width: auto;
+    height: auto;
   }
 }
 
