@@ -84,9 +84,9 @@ a.icon::before {
 }
 
 a.icon.github::before {
-  background-image: url('github.svg');
+  background-image: url('../image/icon/github.svg');
 }
 
 a.icon.mail::before {
-  background-image: url('mail.svg');
+  background-image: url('../image/icon/mail.svg');
 }
