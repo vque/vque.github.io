@@ -4,21 +4,16 @@ img {
 
 .device {
   transform-origin: 0 0;
-  transform: scale(0.3);
+  transform: scale(0.54);
 }
 .device-container {
-  width: 130px;
-  height: 265px;
+  width: 225px;
+  height: 470px;
+  margin: 0 auto;
 }
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-  .device { transform: scale(0.54) }
-  .device-container {
-    width: 225px;
-    height: 470px;
-  }
-}
+@media (min-width: 576px) { }
 
 /*  Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
