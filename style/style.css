@@ -13,7 +13,7 @@ img {
     box-sizing: content-box;
     position: relative;
     width: 320px;
-    height: 480px;
+    height: 568px;
     border: 20px solid black;
     border-radius: 45px;
     padding: 80px 0px;
@@ -28,7 +28,7 @@ img {
   .phone-screenshot::before {
     content: "";
     background: #333;
-    border: 2px solid #444;
+    border: 0px;
     width: 50px;
     height: 10px;
     position: absolute;
