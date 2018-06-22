@@ -58,10 +58,35 @@ img {
   .phone-screenshot {
     transform: scale(1);
     transform-origin: 0 0;
-    margin-right: 0px;
+    margin-right: 20px;
     margin-bottom: 20px;
   }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) { }
+
+.author > img {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 100px;
+}
+
+a.icon::before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  background-size: 100% 100%;
+  width: 20px;
+  height: 20px;
+  margin-right: 2px;
+  margin-bottom: 3px;
+}
+
+a.icon.github::before {
+  background-image: url('github.svg');
+}
+
+a.icon.mail::before {
+  background-image: url('mail.svg');
+}

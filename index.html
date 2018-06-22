@@ -9,71 +9,154 @@
   </head>
 
   <body>
-    <div class="container-fluid py-sm-5">
-      <div class="row flex-wrap-reverse py-3 px-sm-5">
-        <div class="col-12 col-sm-auto phone-screenshot">
+    <div class="container-fluid">
+      <div class="row flex-wrap-reverse py-3 px-sm-5 my-sm-5 align-items-center">
+        <div class="col-12 col-sm-auto phone-screenshot shadow">
           <img src="student.svg" />
         </div>
-        <div class="col py-sm-5 my-5">
+        <div class="col" style="margin-bottom: 60px;">
           <h1 class="display-4 font-weight-normal text-muted"><span class="text-dark">v</span>irtual <span class="text-dark">que</span>uing system</h1>
           <p class="lead font-weight-normal">Virtuelle Warteschlange für praktische Kurse.</p>
           <a class="btn btn-outline-secondary" href="#">Coming soon</a>
         </div>
       </div>
 
-      <div class="row bg-dark text-light py-3 px-sm-5">
+      <div class="row bg-dark text-light py-3 px-sm-5 align-items-center">
         <div class="col">
           <h1 class="font-weight-normal text-muted">Funktionsweise</h1>
           <p>
-            In verschiedenen Kursen stehen verschiedene Assistenten zur Verfügung.
+            In verschiedenen Kursen stehen verschiedene Assistenten zur Verfügung,
+            um die Arbeiten der Studenten zu testieren.
             Studenten stellen sich in einem Kurs an, indem sie einen oder mehrere
             der verfügbaren Assistenten auswählen. Der jeweils erste Student kann
             von den von ihm ausgewählten Assistenten aufgerufen werden.
           </p>
           <p>
-            Während der Wartezeit kann jederzeit überprüft werden wie viele Studenten
-            insgesamt noch vor einem anstehen und wie viele davon wiederum die jeweiligen
-            Assistenten ausgewählt haben. Die Kombination der gewählten Assistenten kann
-            jederzeit geändert werden.
+            Während der Wartezeit kann jederzeit die eigene Position innerhalb
+            der Warteschlange, sowie die Anzahl Studenten die ebenfalls für die
+            gewählten Assistenten anstehen überprüft werden. Die Kombination der
+            gewählten Assistenten kann jederzeit geändert werden.
           </p>
-          <p class="text-center"><img src="display.svg" style="width: 100%; max-width: 700px;" /></p>
+          <p class="text-center"><img class="shadow" src="display.svg" style="width: 100%; max-width: 700px;" /></p>
           <p>
-            Stehen im Labor bzw. Phantomsaal Bildschirme zur Verfügung kann dort
+            Stehen im Labor bzw. Phantomsaal Bildschirme zur Verfügung, kann dort
             eine Liste der aktuell anstehenden Studenten angezeigt werden.
           </p>
         </div>
       </div>
 
-      <div class="row bg-light py-3 px-sm-5">
+      <div class="row bg-light py-3 px-sm-5 align-items-center">
         <div class="col">
           <h1 class="font-weight-normal text-muted">Vorteile</h1>
           <p>
             Die Verwendung einer elektronischen Warteschlange bietet grundsätzlich
-            die Möglichkeit die Wartezeit sinnvoll zu nutzen. So kann während
+            die Möglichkeit, die Wartezeit sinnvoll zu nutzen. So kann während
             des Anstehens, um eine Arbeit vorzuzeigen, bereits an einer anderen
             weitergearbeitet werden.
           </p>
           <p>
-            Im Gegensatz zu klassischen Lösungen wie Nummerziehautomaten kann
+            Im Gegensatz zu klassischen Lösungen wie Nummernziehautomaten kann
             die vque ohne Beschaffung teurer Hard- und Software genutzt werden.
             <br>
-            Die Software ist Open Source und kostenfrei verfügbar.
-            <br>
-            Von Studenten können private Smartphones genutzt werden.
-            Für die Assistenten bietet sich die Nutzung von Tablets an.
+            Die Software ist Open Source und kostenfrei verfügbar. Von Studenten
+            können private Smartphones genutzt werden. Für die Assistenten bietet
+            sich die Nutzung von Tablets an.
             <br>
             Die serverseitige Software stellt keine hohen Anforderungen
             und kann meist auf bestehenden Serversystemen installiert werden.
           </p>
           <p>
-            Mit der vque ist es, wie beim klassischen Anstehen in einer Warteschlange,
-            möglich sich zu entscheiden anderen Studenten automatisch den Vortritt zu lassen,
+            Mit der vque ist es wie beim klassischen Anstehen in einer Warteschlange
+            möglich, sich zu entscheiden, anderen Studenten automatisch den Vortritt zu lassen,
             um beispielsweise eine kleine Korrektur wieder bei dem gleichen Assistenten
-            vorzuzeigen. Dies ist mit vielen anderen Systemem nicht möglich.
+            vorzuzeigen. Dies ist mit vielen anderen Systemen nicht möglich.
           </p>
         </div>
         <div class="col-12 col-sm-auto">
-          <img src="admin.svg" />
+          <img class="shadow" src="admin.svg" />
+        </div>
+      </div>
+
+      <div class="row bg-dark text-light py-3 px-sm-5 align-items-center">
+        <div class="col-12 col-sm-auto">
+          <img class="shadow" src="source.png" style="width: 100%; max-width: 320px;" />
+        </div>
+        <div class="col">
+          <h1 class="font-weight-normal text-muted">Technische Details</h1>
+          <p>
+            Die App ist mit <a href="https://facebook.github.io/react-native/">React Native</a>
+            in Javascript geschrieben und somit für Android und iOS als
+            vollwertige App und für alle weiteren Geräte als Webseite verfügbar.
+            Die Apps bieten im Gegensatz zur Webseite native Funktionen wie
+            Notifications und Vibrationsalarm.
+          </p>
+          <p>
+            Der Server gliedert sich in mehrere Komponenten, die allesamt in
+            Python geschrieben sind. Sie können über das
+            <a href="https://www.python.org/dev/peps/pep-3333/">Web Server Gateway Interface (wsgi)</a>
+            in einen bestehenden Webserver (z.B. via
+            <a href="https://modwsgi.readthedocs.io/en/develop/">mod_wsgi</a>
+            für Apache) eingebunden werden.
+            <br>
+            Zum Login können einer oder mehrere Authentication Server eingerichtet werden.
+            Diese greifen auf eine eigene Datenbank zu oder fragen im Hintergrund
+            bestehende Authentifikationssysteme der Universität ab.
+            <br>
+            Das eigentliche Backend der App wird als GraphQL Schnittstelle zur
+            Verfügung gestellt und speichert den aktuellen Zustand der Warteschlangen
+            in einer Datenbank, sodass dieser nach einem Neustart erhalten bleibt.
+            <br>
+            Wenn unter iOS und Android Push Notifications genutzt werden sollen,
+            wird hierfür ein weiterer Server gestartet.
+          </p>
+        </div>
+      </div>
+
+      <div class="row bg-light py-3 px-sm-5">
+        <div class="col-12">
+          <h1 class="font-weight-normal text-muted">Entwickler</h1>
+        </div>
+        <div class="col my-2">
+          <div class="row align-items-center flex-nowrap">
+            <div class="col-auto author">
+              <img src="moritz.png" />
+            </div>
+            <div class="col">
+              Moritz Kanemeier<br>
+              <a class="icon github" href="https://github.com/moritzmhmk">moritzmhmk</a><br>
+              <a class="icon mail" href="mailto:moritzmhmk@gmail.com">moritzmhmk@gmail.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="col my-2">
+          <div class="row align-items-center flex-nowrap">
+            <div class="col-auto author">
+              <img src="lars.png" />
+            </div>
+            <div class="col">
+              Lars Matzer<br>
+              <a class="icon github" href="https://github.com/harmonica141">harmonica141</a><br>
+              <a class="icon mail" href="mailto:l.matzer@web.de">l.matzer@web.de</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row bg-dark text-light py-3 px-sm-5">
+        <div class="col">
+          <h1 class="font-weight-normal text-muted">Quellcode</h1>
+          <p>
+            Der Quellcode wird voraussichtlich im Herbst 2018 auf
+            <a href="https://github.com/vque">GitHub</a> als Open Source veröffentlicht werden.
+          </p>
+        </div>
+      </div>
+      <div class="row text-muted py-3 px-sm-5">
+        <div class="col">
+          &copy; 2018 Moritz Kanemeier & Lars Matzer
+        </div>
+        <div class="col text-right">
+          <a href="impressum.html">Impressum</a>
         </div>
       </div>
     </div>
