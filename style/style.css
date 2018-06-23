@@ -10,6 +10,7 @@ img {
   width: 225px;
   height: 470px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 /* Small devices (landscape phones, 576px and up) */
